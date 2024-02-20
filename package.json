@@ -1,0 +1,26 @@
+{
+  "name": "nodejs_express_mongo",
+  "version": "1.0.0",
+  "description": " laboratorio API REST  con MongoBD",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gomitand/NodeJS_Express_Mongo.git"
+  },
+  "keywords": [
+    "NodeJS",
+    "Express",
+    "API",
+    "REST",
+    "Backend"
+  ],
+  "author": "Nicolas Daniel Gomez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gomitand/NodeJS_Express_Mongo/issues"
+  },
+  "homepage": "https://github.com/gomitand/NodeJS_Express_Mongo#readme"
+}
