@@ -1,6 +1,6 @@
-const mongoose = require('mongose'); 
+const mongoose = require('mongoose'); 
 
-const usuarioSchema = new mongoose.usuarioSchema({
+const usuarioSchema = new mongoose.Schema({
     email:{
         type:String,
         require: true
