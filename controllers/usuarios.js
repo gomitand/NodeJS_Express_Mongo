@@ -4,11 +4,32 @@ const ruta = express.Router();
 const Joi = require('@hapi/joi'); 
 const { join } = require('path');
 const { json } = require('body-parser');
+const usuario_model = require('../models/usuario_model');
 
-ruta.get('/', (req,res)=>{
-    res.json('Respuesta a peticion GET de USUARIOS funcionando correctamente...');
-    
-    });
+
+// funcion asincrona para listar todos los usuarios activos 
+async function listarUsuariosActivos(){
+    let usuarios = await Usuario.find({"estado": true });
+    return usuarios;
+}
+
+//endopoint de tipo GET  para el recurso usuarios.lista de todos los usuarios 
+
+ruta.get('/',(req, res) => {
+    let resultado = listarUsuariosActivos();
+    resultado.then(usuarios => {
+        res.json(usuarios)
+    }).catch(err => {
+        res.status(400).json(
+            {
+                err
+            }
+        )
+    })
+});
+
+
+module.exports = ruta;  
 
 //validaciones para el objeto usuario
 
@@ -39,7 +60,8 @@ let usuario = new Usuario({
 
     email       : body.email,
     nombre      : body.nombre,
-    password    : body.password
+    password    : body.password,
+    estado      :body.estado
 });
 return await usuario.save();
 
@@ -147,11 +169,6 @@ resultado.then(valor => {
 
 
 });
-
-
-
-
-
 
 
 module.exports = ruta;  
