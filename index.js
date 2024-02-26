@@ -1,5 +1,5 @@
 const usuarios = require('./controllers/usuarios');
-const cursos = require('./controllers/cusrsos');
+const cursos = require('./controllers/cursos');
 
 
 
