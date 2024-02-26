@@ -61,7 +61,7 @@ let usuario = new Usuario({
     email       : body.email,
     nombre      : body.nombre,
     password    : body.password,
-    estado      :body.estado
+    estado      : body.estado
 });
 return await usuario.save();
 
