@@ -15,13 +15,13 @@ const usuarioSchema = new mongoose.Schema({
     },
     estado:{
         type:Boolean,
-        require: true
+        default: true
     },
     imagen:{
-        type:String,
-        require: false
+        type: String,
+        required: false
     }
 
 });
 
-module.exports = mongoose.model('Usuario',usuarioSchema);
+module.exports = mongoose.model('Usuario', usuarioSchema);
